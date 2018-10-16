@@ -44,7 +44,7 @@ const branch = ygg.client.branch(seed);
 ```
 let jsonBody = ygg.utils.dataToJson(branch);  
 
-const txHeaderData = {
+const rawTx = {
     "chain":`0xfe7b7c93dd23f78e12ad42650595bc0f874c88f7`,
     "version":`0x0000000000000000`,
     "type":`0x0000000000000000`,
@@ -53,11 +53,11 @@ const txHeaderData = {
     "bodyLength":`0x${ygg.utils.decimalToHex(jsonBody.length)}`
 };
 
-let tx = new ygg.tx(txHeaderData);
+let tx = new ygg.tx(rawTx);
 tx.sign(new Buffer('3D8A58EA7FA6EF7E038791F3B837FA7BC62DC38CAAFE67AFC4D4567A64D4966E', 'hex'));
 let serialize = tx.serialize(branch);
 
-let register = ygg.client.register(serialize);
+let txHash = ygg.client.plant(serialize);
 ```
 
 ## Installation
