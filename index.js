@@ -6,8 +6,8 @@ if (typeof window !== 'undefined' && typeof window.Ygg === 'undefined') {
 
 module.exports = Ygg;
 
-ygg = new Ygg(new Ygg.providers.HttpProvider("http://localhost:8080"));
-const timestamp = Math.round(new Date().getTime() / 1000);
+// ygg = new Ygg(new Ygg.providers.HttpProvider("http://localhost:8080"));
+// const timestamp = Math.round(new Date().getTime() / 1000);
 
 /* balance */
 
