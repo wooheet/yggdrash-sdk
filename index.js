@@ -6,9 +6,8 @@ if (typeof window !== 'undefined' && typeof window.Ygg === 'undefined') {
 
 module.exports = Ygg;
 
-// ygg = new Ygg(new Ygg.providers.HttpProvider("http://localhost:8080"));
-
-// const timestamp = Math.round(new Date().getTime() / 1000);
+ygg = new Ygg(new Ygg.providers.HttpProvider("http://localhost:8080"));
+const timestamp = Math.round(new Date().getTime() / 1000);
 
 /* balance */
 
@@ -18,31 +17,29 @@ module.exports = Ygg;
 
 /* transfer */
 
-// var to = '0xaca4215631187ab5b3af0d4c251fdf45c79ad3c6';
+// var to = '0x60212061e7bf6fba4b0607fc9c1f8bbb930d87d0';
 // var amount = 1004;
 
-// const transfer = ygg.client.transfer(to, amount);
+// const body = ygg.client.transfer(to, amount);
+// let bodyJson = ygg.utils.dataToJson(body)
 
-// let jsonBody = ygg.utils.dataToJson(transfer)
-
-// let branchId = Buffer.from('ede1ee696f1623a8d3fd5e207de777aa75a9a506', 'hex').toString('hex')
+// let branchId = "0a39170899bd7e721730c7c312afc154d784034b"
 
 // const rawTx = {
-//     "chain":`0x${branchId}`,
-//     "version":`0x0000000000000000`,
-//     "type":`0x0000000000000000`,
+//     "chain":`0x${ygg.utils.hexString(branchId)}`,
+//     "version":`0x${ygg.utils.hexString("0000000000000000")}`,
+//     "type":`0x${ygg.utils.hexString("0000000000000000")}`,
 //     "timeStamp":`0x${ygg.utils.decimalToHex(timestamp)}`,
-//     "bodyHash": `0x${ygg.utils.bodyHashHex(jsonBody)}`,
-//     "bodyLength":`0x${ygg.utils.decimalToHex(jsonBody.length)}`
-// };
+//     "bodyHash":`0x${ygg.utils.bodyHashHex(bodyJson)}`,
+//     "bodyLength":`0x${ygg.utils.decimalToHex(bodyJson.length)}`
+//   };
 
 // let tx = new ygg.tx(rawTx);
 
-// tx.sign(new Buffer('3D8A58EA7FA6EF7E038791F3B837FA7BC62DC38CAAFE67AFC4D4567A64D4966E', 'hex'));
+// tx.sign(new Buffer('5654f359c90004451a32dfd0286e61d1944b5a1ecde05808c11138c0c2c26520', 'hex'));
 
-// let serialize = tx.serialize(transfer, branchId);
+// let serialize = tx.serialize(body, branchId);
 
-// console.log(serialize)
 // ygg.client.sendTransaction(serialize)
 
 /* stem */
