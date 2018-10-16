@@ -19,13 +19,13 @@ module.exports = Ygg;
 /* transfer */
 
 // var to = '0xaca4215631187ab5b3af0d4c251fdf45c79ad3c6';
-// var amount = 1001;
+// var amount = 1004;
 
 // const transfer = ygg.client.transfer(to, amount);
 
 // let jsonBody = ygg.utils.dataToJson(transfer)
 
-// let branchId = Buffer.from('e41bc4c08d996cafb169274d5b7ca8f75898dc06', 'hex').toString('hex')
+// let branchId = Buffer.from('ede1ee696f1623a8d3fd5e207de777aa75a9a506', 'hex').toString('hex')
 
 // const rawTx = {
 //     "chain":`0x${branchId}`,
@@ -42,9 +42,8 @@ module.exports = Ygg;
 
 // let serialize = tx.serialize(transfer, branchId);
 
+// console.log(serialize)
 // ygg.client.sendTransaction(serialize)
-
-
 
 /* stem */
 
@@ -81,6 +80,6 @@ module.exports = Ygg;
 
 // let serialize = tx.serialize(branch);
 
-// let plant = ygg.client.plant(serialize);
-
-// console.log(plant)
+// ygg.client.plant(serialize).then((result) => {
+//     console.log("hash", result)    
+// })
